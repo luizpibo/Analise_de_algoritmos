@@ -205,7 +205,6 @@ int shellSort(int A[], int tam)
 void geraArrayAleatorio(int v[])
 {
     int i = 0;
-    srand(time(NULL));
     while (i < TAM)
     {
         v[i] = (rand() % TAM) + (-TAM / 2);
@@ -241,14 +240,14 @@ void mostraCompara()
     int v1[TAM], v2[TAM];
 
     //Gerando array com valores aleatórios
+    srand(time(NULL));
     geraArrayAleatorio(v1);
 
     //Exibindo array inicial
-    //mostraArray(v1);
+    mostraArray(v1);
 
     //copiando array
     copiaArray(v1, v2);
-    printf("\n\n");
 
     //Sorts
     printf("Número de trocas bubble...: %d\n", bubbleSort(v2, TAM));
@@ -264,6 +263,7 @@ void mostraCompara()
 }
 int main()
 {
+    mostraCompara();
     mostraCompara();
     mostraCompara();
     mostraCompara();
